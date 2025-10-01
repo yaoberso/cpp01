@@ -11,10 +11,10 @@ std::string	sr_and_rp(std::string file, std::string s1, std::string s2)
 	size_t start = 0;
 	while (pos != std::string::npos)
 	{
-    	file_mod += file.substr(start, pos - start); // texte avant s1
-    	file_mod += s2;                              // remplacer s1 par s2
-    	start = pos + s1.length();                   // avancer le curseur
-    	pos = file.find(s1, start);                  // chercher la prochaine occurrence
+    	file_mod += file.substr(start, pos - start);
+    	file_mod += s2;
+    	start = pos + s1.length();
+    	pos = file.find(s1, start);
 	}
 	file_mod += file.substr(start);
 	return (file_mod);
@@ -24,7 +24,13 @@ int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		return (0);
+		std::cout << "Error : arg" << std::endl;
+		return (1);
+	}
+	if (std::string(argv[2]).empty())
+	{
+    	std::cerr << "Error : second arg (s1) can't be empty" << std::endl;
+    	return (1);
 	}
 	std::string filename = argv[1];
 	std::ifstream infile(filename);
