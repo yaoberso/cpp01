@@ -19,5 +19,4 @@ class Harl{
     	static const f action[4];
 };
 
-
 #endif
