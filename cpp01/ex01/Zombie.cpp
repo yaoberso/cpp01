@@ -2,13 +2,13 @@
 
 Zombie::Zombie()
 {
-	std::cout << "Zombie " << this->name << " created" << std::endl;
+	std::cout << "Constructor called !" << std::endl;
 	return;
 }
 
 Zombie::~Zombie()
 {
-	std::cout << "Zombie " << this->name << " destroy" << std::endl;
+	std::cout << "Destructor called !" << std::endl;
 	return;
 }
 

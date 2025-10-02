@@ -29,7 +29,7 @@ void	HumanB::attack()
 	}
 	else
 	{
-		std::cout << this->_name << " has no Weapon" << std::endl;
+		std::cout << this->_name << "Has no Weapon" << std::endl;
 	}
 	return;
 }

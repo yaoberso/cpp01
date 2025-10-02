@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cout << "Error : arg" << std::endl;
+		std::cout << "Invalid number of arguments." << std::endl;
 		return (1);
 	}
 	if (std::string(argv[2]).empty())
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
     	return (1);
 	}
 	std::string filename = argv[1];
-	std::ifstream infile(filename);
+	std::ifstream infile(filename.c_str());
 	if (!infile.is_open())
 	{
 		std::cerr << "Erreur : impossible d'ouvrir le fichier !" << std::endl;
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
                          std::istreambuf_iterator<char>());
 	std::string file_replace = sr_and_rp(file_content, argv[2], argv[3]);
 	std::string outname = filename + ".replace";
-	std::ofstream outfile(outname);
+	std::ofstream outfile(outname.c_str());
 	if (!outfile.is_open())
 	{
 		std::cerr << "Erreur : impossible d'ouvrir le fichier !" << std::endl;
